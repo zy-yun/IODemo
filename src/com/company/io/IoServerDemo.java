@@ -10,8 +10,9 @@ public class IoServerDemo {
         ServerSocket socket = null;
         try {
             socket = new ServerSocket(8080);
-            Socket accept = socket.accept();
+            //一直监听端口
             while (true){
+                Socket accept = socket.accept();
                 if (null!=accept){
                     InputStream inputStream = accept.getInputStream();
                     BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(inputStream));
